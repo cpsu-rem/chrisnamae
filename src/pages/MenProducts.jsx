@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-const Products = () => {
+const MenProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("https://fakestoreapi.com/products");
+      const response = await fetch("https://fakestoreapi.com/products/category/men's clothing");
       const data = await response.json();
       setProducts(data);
     };
@@ -16,7 +16,7 @@ const Products = () => {
   return (
     <section  className="py-16 px-6 pt-32">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10">All Products</h2>
+        <h2 className="text-3xl font-bold text-center mb-10">Men's Clothing</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {products.length === 0 ? (
             <p className="text-center text-gray-600">Loading products...</p>
@@ -50,4 +50,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default MenProducts;

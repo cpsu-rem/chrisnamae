@@ -1,25 +1,26 @@
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
-import BeautyProducts from '../pages/BeautyProducts';
 
 
-import GroceriesProducts from '../pages/GroceriesProducts';
 
-import Products from '../pages/Products';  // New Products page component
+import WomenProducts from '../pages/WomenProducts';
+import Products from '../pages/Products';
 
-function Router() {
+import MenProducts from '../pages/MenProducts.jsx';  
+const  Router=()=> {
   return (
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         
 
-        <Route path="/products" element={<Products />} />
+        <Route path="/mensclothing" element={<MenProducts />} />
+        <Route path="/allproducts" element={<Products />} />
 
-        <Route path="/beauty" element={<BeautyProducts />} />
+        
 
-        <Route path="/groceries" element={<GroceriesProducts />} />
+        <Route path="/womensclothing" element={<WomenProducts />} />
        
       </Route>
     </Routes>
